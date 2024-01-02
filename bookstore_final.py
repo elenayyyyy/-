@@ -261,8 +261,8 @@ def groupbuy_page():
                 
             st.session_state.confirm_group_buying = True
             # 如果確認，執行結帳頁面
-            if 'confirm_group_buying' in st.session_state and st.session_state.confirm_group_buying:
-                Payment_page_group()
+        if 'confirm_group_buying' in st.session_state and st.session_state.confirm_group_buying:
+            Payment_page_group()
  
 
 
