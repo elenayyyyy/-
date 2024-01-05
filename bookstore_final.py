@@ -256,10 +256,10 @@ def groupbuy_page():
             total_group_buy_quantity = sum(item["我的團購"] for item in st.session_state.group_buy)
             if total_group_buy_quantity >= 10:
                 st.success("恭喜！團購數量已達到10本。")
+                st.session_state.confirm_group_buying = True
             else:
                 st.warning(f"目前團購數量為 {total_group_buy_quantity} 本，還差 {10 - total_group_buy_quantity} 本達成目標。請繼續邀請更多人參加。")
                 
-            st.session_state.confirm_group_buying = True
             # 如果確認，執行結帳頁面
         if 'confirm_group_buying' in st.session_state and st.session_state.confirm_group_buying:
             Payment_page_group()
