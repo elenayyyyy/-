@@ -253,7 +253,7 @@ def groupbuy_page():
 
         confirm = st.button('確認團購')
         if confirm:
-            total_group_buy_quantity = sum(item["我的團購"] for item in st.session_state.group_buy)
+            total_group_buy_quantity = sum(item["目前累計"] for item in st.session_state.group_buy)
             if total_group_buy_quantity >= 10:
                 st.success("恭喜！團購數量已達到10本。")
                 st.session_state.confirm_group_buying = True
